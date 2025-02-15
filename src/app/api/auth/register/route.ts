@@ -3,7 +3,7 @@ import User from "@/models/User";
 import { NextRequest, NextResponse } from "next/server";
 
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest) {
 
     try {
         const { email, password } = await req.json();
@@ -23,6 +23,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         return NextResponse.json({ message: "user registered successfully" }, { status: 200 })
 
     } catch (error) {
+        console.log({ error,route:"register" });
         return NextResponse.json({ error: "failed to register user" }, { status: 500 })
     }
 

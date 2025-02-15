@@ -54,7 +54,7 @@ export default function VideoUploadForm() {
 
         setLoading(true);
         try {
-          const res=  await apiClient.createVideo(data);
+           await apiClient.createVideo(data);
             setNotification("Video published successfully!", "success");
 
             // Reset form after successful submission

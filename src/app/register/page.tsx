@@ -1,14 +1,13 @@
 'use client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React, { FormEvent, useState } from 'react'
+import React, { useState } from 'react'
 import { useNotification } from '../context/NotificationProvider';
 
-const page = () => {
+const Register = () => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [email, setEmail] = useState("");
-    const [error, setError] = useState<string | null>(null);
     const { setNotification } = useNotification();
 
     const router = useRouter();
@@ -103,4 +102,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Register

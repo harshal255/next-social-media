@@ -5,13 +5,14 @@ const imagekit = new ImageKit({
     publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY!,
     privateKey: process.env.IMAGEKIT_PRIVATE_KEY!,
     urlEndpoint: process.env.NEXT_PUBLIC_URL_ENDPOINT!,
-  });
+});
 
 export async function GET() {
     try {
         const imagekitAuth = imagekit.getAuthenticationParameters();
         return NextResponse.json(imagekitAuth);
     } catch (error) {
+        console.log({ error, route: "imagekit-auth" });
         return NextResponse.json({ error: "Imagekit Auth Failed" }, { status: 500 })
     }
 }
