@@ -9,6 +9,7 @@ type FetchOptions = {
     headers?: Record<string, string> //bsically key-value pair like an obj
 }
 
+const baseURL = process.env.NEXT_PUBLIC_SERVER_BASE_URL || "http://localhost:3000";
 
 class ApiClient {
     private async centralizedFetch<T>(
@@ -20,7 +21,7 @@ class ApiClient {
             "Content-Type": "application/json", ...headers
         }
 
-        const response = await fetch(`/api${endpoint}`, {
+        const response = await fetch(`${baseURL}/api${endpoint}`, {
             method,
             headers: defaultHeaders,
             body: body ? JSON.stringify(body) : undefined
