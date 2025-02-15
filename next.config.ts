@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://next-social-media-ebon.vercel.app,http://localhost:3000", // Allow all origins (replace with specific domains if needed)
+            value: "https://next-social-media.onrender.com,https://next-social-media-ebon.vercel.app,http://localhost:3000", // Allow all origins (replace with specific domains if needed)
           },
           {
             key: "Access-Control-Allow-Methods",

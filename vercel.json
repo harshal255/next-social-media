@@ -12,7 +12,7 @@
         "dest": "/api/$1",
         "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         "headers": {
-          "Access-Control-Allow-Origin": "https://next-social-media-ebon.vercel.app,http://localhost:3000",
+          "Access-Control-Allow-Origin": "https://next-social-media.onrender.com,https://next-social-media-ebon.vercel.app,http://localhost:3000",
           "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
           "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
           "Access-Control-Allow-Credentials": "true"
