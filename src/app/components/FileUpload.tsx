@@ -73,24 +73,15 @@ export default function FileUpload({
         <>
             <IKUpload
                 fileName={fileType === "video" ? "video" : "image"}
-                useUniqueFileName={true}
-                validateFile={validateFile}
                 onError={onError}
-                folder={fileType === "video" ? "video/*" : "image/*"}
                 onSuccess={handleSuccess}
-                onUploadProgress={handleProgressUpload}
                 onUploadStart={handleStartUpload}
-                transformation={{
-                    pre: "l-text,i-Imagekit,fs-50,l-end",
-                    post: [
-                        {
-                            type: "transformation",
-                            value: "w-100",
-                        },
-                    ],
-                }}
-                style={{ display: 'none' }} // hide the default input and use the custom upload button
-
+                onUploadProgress={handleProgressUpload}
+                accept={fileType === "video" ? "video/*" : "image/*"}
+                className="file-input file-input-bordered w-full"
+                validateFile={validateFile}
+                useUniqueFileName={true}
+                folder={fileType === "video" ? "/videos" : "/images"}
             />
             {
                 uploading && (
@@ -101,7 +92,7 @@ export default function FileUpload({
                 )
             }
             {error && (
-                <div className="text-error text-sm text-red-600">{error}</div>
+                <div className="text-sm text-red-600">{error}</div>
             )}
         </>
     );

@@ -26,7 +26,7 @@ class ApiClient {
             body: body ? JSON.stringify(body) : undefined
         });
 
-        if (response.ok) {
+        if (!response.ok) {
             throw new Error(await response.text())
         }
         return response.json();
